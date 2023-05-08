@@ -237,7 +237,7 @@ allow data := 10;
 ```
 <br>
 
-> ### Floats (Rules & Operators) | Module 0.3###
+> ### Floats (Rules & Operators) | Module 0.3 ###
 
 <br>
 
@@ -358,13 +358,13 @@ which again notice how a semicolon ends the hash and the last key and value pair
 
 Arrays in SkyLine are quite simple, SkyLine allows you to store any value and any result inside of an array. Arrays are defined with `[]` and have their values typically seperated by `,`. Below are some examples of arrays.
 
-** Basic Array **
+**Basic Array**
 
 ```rs
 set x := ["name", "value", 1, 1.5, true, false];
 ```
 
-** Array indexing **
+**Array indexing**
 
 Array indexing is quite easy and the only support for arrays right now is a numerical index which means that if you want to index the array, you have to index it based on the positions. For example if we wanted `name` out of `x` we need to index it by 0 like so.
 
@@ -376,7 +376,7 @@ x[0]
 //Result: String->name
 ```
 
-** Calling functions from arrays **
+**Calling functions from arrays**
 
 Like the hash maps, functions are also supported
 
