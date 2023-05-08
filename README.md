@@ -31,6 +31,12 @@ When working with strings, you may want to increase the value of the string, or 
 
 These are weird operators to see supported with a string data type, why does `*=` even exist? We will get to that in just a second but first lets see some base examples of a string 
 
+<br>
+
+**Operator(+=)**
+
+<br>
+
 ```rs
 set name := "Ryan";
 
@@ -40,4 +46,32 @@ Ryan += "20";
 ```
 
 This program simply declares a string value and then adds the string value "20" to the string which results in `Ryan20`
+
+<br>
+
+**Operator(=) **
+
+```rs
+set name := "Ryan";
+
+name = 10;
+
+// Result: Integer->10
+```
+
+The `=` operator works the same as any other programming language, it does what it seems, assigns a new value to a variable. Because SkyLine is dynamic, you can assign any data type to an existing value. Unlike some languages which do not allow you to assign another value of another data type. In this case SkyLine changed the name variable from `String->Integer`
+
+**Operator(*=)**
+
+This one is going to be quite confusing for some people so we can make this as basic as possible. The **=* operator in this case is an operator that will multiple one string on the left side by the length of another string on the right side of the string. Lets write a simple program to demo this.
+
+```rs
+cause x := "hello world ";
+
+x *= "aaaa";
+
+// Result: hello world hello world hello world hello world hello world
+```
+
+This results in the phrase `hello world` to be added to the string value 4 times. This acts as a String.Repeat() function that will repeat the string based on the length of another string. Because the left of the operator `*=` is the value you are going to repeat, SkyLine will check the length of the string on the right side and use that as a count to multiply the strings. If the string on the right had one more `a` in it, then the length would be 5 which would tell SkyLine to repeat the string value of `x` 5 different times and append it to the current string.
 
