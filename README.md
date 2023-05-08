@@ -320,6 +320,8 @@ This program is quite simple and allows users to understand how to return data. 
 
 The first thing we will hop into is just hash maps. Hash maps in SkyLine are easy to understand and have their own unique parts to them such as the way you can store and return data. Hash maps are fluid which means they can take in any data type and output any data type. In future versions this will not exist by default and will be customizeable using the SLC ( SkyLine Configuration language ). Below are some examples of hash maps 
 
+> #### Hash Maps ####
+
 **Basic hash map and call**
 
 ```rs
@@ -350,6 +352,44 @@ set MapofCommands := {
 ```
 
 which again notice how a semicolon ends the hash and the last key and value pair `1.0: 1` does not have a comma after it. 
+
+
+> #### Arrays ####
+
+Arrays in SkyLine are quite simple, SkyLine allows you to store any value and any result inside of an array. Arrays are defined with `[]` and have their values typically seperated by `,`. Below are some examples of arrays.
+
+** Basic Array **
+
+```rs
+set x := ["name", "value", 1, 1.5, true, false];
+```
+
+** Array indexing **
+
+Array indexing is quite easy and the only support for arrays right now is a numerical index which means that if you want to index the array, you have to index it based on the positions. For example if we wanted `name` out of `x` we need to index it by 0 like so.
+
+```rs
+set x := ["name", "value", 1, 1.5, true, false];
+
+x[0]
+
+//Result: String->name
+```
+
+** Calling functions from arrays **
+
+Like the hash maps, functions are also supported
+
+```rs
+set NewArray := [
+    "data",
+    "newdata",
+    Func(x, y) { return x - y; },
+    "data2"
+];
+
+NewArray[2](10, 20)
+```
 
 
 
