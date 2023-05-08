@@ -287,6 +287,72 @@ Functions in SkyLine are still currently being worked on and actively being modi
 
 Below are some examples of data types
 
+**Basic function**
+
+```rs
+cause Data := Func() {
+  println("hello world")
+};
+```
+
+Every function is defined in two ways `Func` or `function`. There is a reason there are two seperate keywords, this is because in later versions of the language, there will be rules for importing data. Currently, SkyLine allows you to import and export data such as variables, functions, hashes, results and outputs as long as the first value in the name is capitalized. This means in the future if you want to export a function you will need to use `Func` or make the first letter of the function name capitalized. Functions also MUST end with a semicolon, this is not optional.
+
+**Subtraction function (Sample returns)**
+
+```rs
+cause subtract := Func(x, y) {
+  ret x - y;
+};
+
+set cause := subtract(10, 20);
+
+println(res)
+```
+
+This program is quite simple and allows users to understand how to return data. Returning data in SkyLine is quite easy as you can use both `ret` and `return` keywords to return a result. In some cases, depending on configuration you may not need to use return at all and can just produce an output like `x - y;` in the function and it will still print it out. You cann a function by calling the variable name followed by `()` and if there are arguments that need to be filled then you need to fill those arguments. 
+
+
+<br>
+
+> ### Hash Maps and Arrays (Rules & Syntax) | Module 0.6 ###
+
+<br>
+
+The first thing we will hop into is just hash maps. Hash maps in SkyLine are easy to understand and have their own unique parts to them such as the way you can store and return data. Hash maps are fluid which means they can take in any data type and output any data type. In future versions this will not exist by default and will be customizeable using the SLC ( SkyLine Configuration language ). Below are some examples of hash maps 
+
+** Basic hash map and call **
+
+```rs
+{
+  "hello": Func(x) {println("hello " + x )},
+  "world": "hello"
+}["hello"]("world");
+```
+
+This program is quite confusing to some people so let us break it down. SkyLine in itself does not have direct rules for how you can use hash maps other than the fact that hash maps require you to not use a comma after the last value in the map and also require that in some cases you end the braces with a semicolon. This program will declare a hash map using `{}`, it stores two values which are the input values. If the key `hello` is found in the map, then the function will be executed, and if the key is `world`, `hello` will output.
+
+```rs
+result: hello world
+```
+
+** Using hashes properly **
+
+Typically you do not want the mess above, so we can declare a hash like this.
+
+```rs
+set MapofCommands := {
+  "hello": 1,
+  "t": true,
+  "f": false,
+  "age": 18,
+  1.0: 1
+};
+```
+
+which again notice how a semicolon ends the hash and the last key and value pair `1.0: 1` does not have a comma after it. 
+
+
+
 
 
 
