@@ -11,7 +11,7 @@ Variables in SkyLine are quite easy, each data type (`String, Float, Boolean, Er
 
 > Note: Keywords such as set, let, cause, allow are all doing the same thing, they all allow you to create and assign base variables into the environment of the language. SkyLine has some basic issues with only using one keyword because the developer firmly believes in fluidity. The mash and mix of keywords while all doing the same thing all allow the people and developers to use a specific style when in further development.
 
-> ####Strings (Rules & Operators) | Module 0.1####
+####Strings (Rules & Operators) | Module 0.1####
 
 > **Strings**
 
@@ -99,7 +99,7 @@ println("Value: \r " + value)
 
 `\f` and `\v` also are very well used, however it has become apparent that using strings or values like `\n` at the end or beggining of the string or value will result in an error or a frozen parser. The freeze is NOT intentional but this is definitely in the rule sets to provide a much more slick ability for parsing on the backend. 
 
-> ####Integers (Rules & Operators) | Module 0.2####
+####Integers (Rules & Operators) | Module 0.2####
 
 Integers in SkyLine ( 0.0.5 ) are defined as an integer64 data type on the backend. Which means that there is no other Integer data type in SkyLine since integer64 is the highest integer you can store. In this case, integers are quite easy to understand.
 
@@ -229,7 +229,7 @@ allow data := 10;
 (data * 20)   // Result: 200
 ```
 
-> ####Floats (Rules & Operators) | Module 0.3####
+####Floats (Rules & Operators) | Module 0.3####
 
 Floats on the backend are parsed as a float64 value. This means that the float values in SkyLine max out to ` 1.8 x 10^308` the IEEE 754 binary64 format. This will be a environment based constant in the future and floats in 0.10.0 will no longer be floats and rather be Float32 and Float64. You can declare a float like so in SkyLine.
 
@@ -246,7 +246,7 @@ println(age - 15)
 Floats are pretty easy to understand and work the same as integers but are parsed and evaluated / treated differently.
 
 
-> ####Booleans (Rules & Operators) | Module 0.4####
+####Booleans (Rules & Operators) | Module 0.4####
 
 Booleans are easy to understand, as keywords build booleans such as `true` and `false`. Booleans only have one major operator to work with that is not a comparison operator. That operator / expression is `--`. Weird right? Most programming languages only reserve `++` and `--` as a expression for numerical data types. In SkyLine a `--` mixed with a variable with a true value will make it a false value. 
 
