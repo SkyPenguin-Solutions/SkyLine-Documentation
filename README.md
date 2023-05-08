@@ -404,7 +404,268 @@ Each object within the SkyLine programming language is allowed to have their own
 | Array          | Append, Compare, Copy, Length, Less, Methods, PopL, PopR, Reverse, Swap, Typeof, View |
 | Hash / Map     | keys |
 
+> ### Object Call Functions ( Calling ) | Module 0.0 ###
 
+Calling a standard library function and an object function is pretty easy. All you have to do is place the data type or value holding a specific data type followed by a period and the function you are calling. The function below will dump all of the keys to a hash map.
+
+```rs
+cause x := {
+    "hey": "Hello there!",
+    1: 2,
+    1.5: 1
+};
+
+x.keys()
+
+//result: Array->[hey, 1, 1.5]
+```
+
+Note that this list will go from the ones with the best methods and then go down to simplifying general methods.
+
+> ### String methods | Module 0.1 ###
+
+Strings have a ton of methods, especially conversion methods. Later on, similar to the Go programming language. These methods will be automatically pushed into a standard library due to the amount of methods that could be thrown into these data types especially Strings.
+
+**Boolean**
+
+The boolean function allows you to try to convert or parse a string value as a boolean value.
+
+```rs
+cause x := "true";
+
+x.Boolean()
+//Result: Boolean->true
+```
+
+**Float**
+
+Float does the same thing as a boolean conversion function. It attempts to convert the string value to SkyLine's Float type.
+
+```rs
+set x := "1.5";
+
+x.Float()
+//Result: Float->1.5
+```
+
+**Integer**
+
+String to Integer conversion.
+
+```
+set age := "16";
+
+age.Integer()
+//Result: Integer->16
+```
+
+**Length**
+
+The length call will get you the length of the string 
+
+```rs
+set name := "Ryan age 16";
+
+name.Length()
+//Result:Integer->11
+```
+
+**Lower**
+
+Will convert the string to all lowercase values 
+
+```rs
+set Name := "NaMe";
+
+Name.Lower()
+//Result:String->name
+```
+
+**Upper**
+
+Opposite of lower, will make everything uppercase.
+
+```rs
+set Name := "ryan";
+
+Name.Upper()
+
+//Result:String->RYAN
+```
+
+**Ord**
+
+Will getthe Unicode code point of a single character string. The term "ord" or 
+"ordinal" refers to the position of a character in the Unicode character set
+
+
+```rs
+set a := "Hello world";
+
+a.Ord()
+//Result: Integer->72
+```
+
+If the string is longer than 1 then the first character will be called to return the value.
+
+**Title**
+
+Will make everythin capital 
+
+```rs
+
+set title := "hackers break into tesla!";
+
+title.Title()
+Result: String->HACKERS BREAK INTO TESLA!
+```
+
+**Split**
+
+Splitting is quite easy to understand, it will split at a given point in the string or split the string by a given split set. Say we want to seperate `name,age,date,row,column_id` but can not get that data to be single so we can use split to seperate everything.
+
+```rs
+set data := "name,age,date,row,column_id";
+
+data.Split(",")
+
+//Result: Array -> [name, age, date, row, column_id]
+```
+
+**Trim**
+
+Trims the string by a given cutset, trim is a bit broken right now and we will address this issue when 0.10.0 comes out.
+
+**View**
+
+Almost every data type has this in the language, but view is the view of what the AST has structured.
+
+```rs
+set v := "data".View();
+
+v
+
+//Result: String->data
+```
+
+> ### Array methods | Module 0.2 ###
+
+Arrays have many methods that allow you to compare, copy, pop and even swap values within the array. Below these methods are shown and ran as an example below.
+
+**Append**
+
+Append data to arrays only exists within strings right now but a base example is shown below.
+
+```rs
+set x := [];
+
+x.Append("hello")
+
+x
+
+//Result: Array->[hello]
+```
+
+**PopL**
+
+PopL stands for pop left which will pop the left most value from the array, so anything that is the "first" rather zeroth value in the array will be popped.
+
+```rs
+set x := [1, 2, 3];
+
+x.PopL()
+
+x
+//Result: Array->[2,3]
+```
+
+**PopR**
+
+PopR stands for pop right. Similar to PopL, PopR will pop the rightmost value from the array.
+
+```rs
+set x := [1, 2, 3];
+
+x.PopL()
+
+x
+//Result: Array->[1, 2]
+```
+
+**Reverse**
+
+Will reverse the values of the array
+
+```rs
+set x := [1, 2, 3];
+
+x.Reverse()
+
+x
+//Result: Array->[3, 2, 1]
+```
+
+**Swap**
+
+Allows you to swap a value with another value within the array based on its position. 
+
+```rs
+set names := ["ryan", "bob", "ang", "kod"]
+
+names.Swap(0, 3)
+
+//Result: Array->["kod", "bob", "ang", "ryan"]
+```
+
+**Typeof**
+
+Typeof is a method that is used to view the type of array, this goes based on the values. This is sadly not implemented into every data type.
+
+```
+set x := [];
+
+x.Typeof()
+
+//Result->SkyLine Object (Virtual) < Array >
+```
+
+**Prepend**
+
+Prepend will prepend values to the array. This means that the values will be appended before any other values of the array rather than the front side of the array. For example if you have "hello" at the 0th position in the array and prepend to the array with "hi" then "hi" will be the value now in the 0th position and every other value will shift positions right by one.
+
+```rs
+set x := [1, 2, 3, 4, 5];
+
+x.Prepend("hi")
+
+x
+
+//Result: Array->[hi, 1, 2, 3, 4, 5]
+```
+
+> ### Any methods | Module 0.3 ###
+
+The `Any` method in SkyLine defines any and all data types or objects. For example, this means that functions, hashes, import calls, strings, integers, floats etc all will have these methods and calls set to them. These methods are cuurrently only stuck to `Length` and `Methods`. While `Length` is not directly put into every data type, `Methods are`.
+
+**Methods**
+
+The `Methods` function acts as a call to allow users to lookup what objects exist within the object. Not only can this be used as an alternative for type lookup but can also be allowed for users to look at methods or calls offline without having to look at man pages or go through documentations.
+
+```
+STRING.Methods()
+
+//Result: Any(Array)->[Boolean, Float, Integer, Length, Lower, Methods, Ord, Split, Title, Trim, UnlinkRegistry, Upper, View]
+```
+
+**Length**
+
+Returns the length of a value
+
+```
+STRING.Length()
+
+//Result: Integer->6 ( because len(STRING)=6 )
+```
 
 
 
