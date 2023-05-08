@@ -11,6 +11,8 @@ Variables in SkyLine are quite easy, each data type (`String, Float, Boolean, Er
 
 > Note: Keywords such as set, let, cause, allow are all doing the same thing, they all allow you to create and assign base variables into the environment of the language. SkyLine has some basic issues with only using one keyword because the developer firmly believes in fluidity. The mash and mix of keywords while all doing the same thing all allow the people and developers to use a specific style when in further development.
 
+> ####Strings (Rules & Operators) | Module 0.1####
+
 > **Strings**
 
 Given that SkyLine is a dynamic programming language, a string data type is assumed with `""` which makes it pretty easy to understand 
@@ -18,8 +20,6 @@ Given that SkyLine is a dynamic programming language, a string data type is assu
 ```rs
 set x := "data";
 ```
-
-> ####Strings (Rules & Operators) | Module 0.1####
 
 When working with strings, you may want to increase the value of the string, or manipulate it in some shape or form. Currently strings have the supported operators 
 
@@ -99,7 +99,7 @@ println("Value: \r " + value)
 
 `\f` and `\v` also are very well used, however it has become apparent that using strings or values like `\n` at the end or beggining of the string or value will result in an error or a frozen parser. The freeze is NOT intentional but this is definitely in the rule sets to provide a much more slick ability for parsing on the backend. 
 
-> ####Integers (Rules & Operators) | Module 0.1####
+> ####Integers (Rules & Operators) | Module 0.2####
 
 Integers in SkyLine ( 0.0.5 ) are defined as an integer64 data type on the backend. Which means that there is no other Integer data type in SkyLine since integer64 is the highest integer you can store. In this case, integers are quite easy to understand.
 
@@ -175,8 +175,11 @@ x -= 5
 
 //Result: 5
 ```
+<br>
 
 **Operator(/=)**
+
+<br>
 
 This operation will divide the left by the right side.
 
@@ -187,5 +190,83 @@ x /= 5
 
 //Result: 2
 ```
+
+<br>
+
+**Operator(-- & ++)**
+
+<br>
+
+The operation `--` will subtract one from the current value ( in the case of integers ) and `++` will add one to the current value.
+
+```rs
+set age = 18;
+
+age++
+
+//Result: age=19
+
+age--
+
+//Result: age back to 18
+```
+<br>
+
+**Operator(-, +, /, *, **) **
+
+<br>
+
+All of these operators work the same as any other language.
+
+```rs
+
+allow data := 10;
+
+(data - 20)   // Result: -10
+(data + 20)   // Result: 30
+(data / 20)   // Result: 0
+(data ** 20)  // Result: -9223372036854775808
+(data * 20)   // Result: 200
+```
+
+> ####Floats (Rules & Operators) | Module 0.3####
+
+Floats on the backend are parsed as a float64 value. This means that the float values in SkyLine max out to ` 1.8 x 10^308` the IEEE 754 binary64 format. This will be a environment based constant in the future and floats in 0.10.0 will no longer be floats and rather be Float32 and Float64. You can declare a float like so in SkyLine.
+
+> Note: Operators were not added here because they are the same as integers
+
+<br>
+
+```rs
+allow age = 1.5;
+
+println(age - 15)
+```
+
+Floats are pretty easy to understand and work the same as integers but are parsed and evaluated / treated differently.
+
+
+> ####Booleans (Rules & Operators) | Module 0.4####
+
+Booleans are easy to understand, as keywords build booleans such as `true` and `false`. Booleans only have one major operator to work with that is not a comparison operator. That operator / expression is `--`. Weird right? Most programming languages only reserve `++` and `--` as a expression for numerical data types. In SkyLine a `--` mixed with a variable with a true value will make it a false value. 
+
+```rs
+cause ofage := true;
+
+ofage--
+
+println(ofage)
+
+//Result: false
+```
+
+The keys `++` Do not exist for true and false values right now. Booleans can also be declared using `BOOLEANF` and `BOOLEANT`
+
+>
+
+
+
+
+
 
 
