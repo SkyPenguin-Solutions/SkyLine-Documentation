@@ -49,7 +49,7 @@ This program simply declares a string value and then adds the string value "20" 
 
 <br>
 
-**Operator(=) **
+**Operator(=)**
 
 ```rs
 set name := "Ryan";
