@@ -19,8 +19,6 @@ Variables in SkyLine are quite easy, each data type (`String, Float, Boolean, Er
 
 <br>
 
-> **Strings**
-
 Given that SkyLine is a dynamic programming language, a string data type is assumed with `""` which makes it pretty easy to understand 
 
 ```rs
