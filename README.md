@@ -391,6 +391,22 @@ set NewArray := [
 NewArray[2](10, 20)
 ```
 
+# Object Call functions #
+
+Each object within the SkyLine programming language is allowed to have their own unique object call functions otherwise known as invokes. These functions allow you to easily execute functions and get results quicker. Since there are only minimal data types we have listed a table below and all of their methods 
+
+| Data Type / Ex | Object Call / Method / Invoke |
+| -------------- | ----------------------------- |
+| String         | Boolean, Float, Integer, Length, Lower, Methods, Ord, Split, Title, Trim, UnlinkRegistry, Upper, View |
+| Boolean        | methods, View |
+| Integer        | methods, View, chr |
+| Float          | methods, View, chr |
+| Array          | Append, Compare, Copy, Length, Less, Methods, PopL, PopR, Reverse, Swap, Typeof, View |
+| Hash / Map     | keys |
+
+
+
+
 
 
 
