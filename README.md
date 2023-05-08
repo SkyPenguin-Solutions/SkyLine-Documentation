@@ -320,7 +320,7 @@ This program is quite simple and allows users to understand how to return data. 
 
 The first thing we will hop into is just hash maps. Hash maps in SkyLine are easy to understand and have their own unique parts to them such as the way you can store and return data. Hash maps are fluid which means they can take in any data type and output any data type. In future versions this will not exist by default and will be customizeable using the SLC ( SkyLine Configuration language ). Below are some examples of hash maps 
 
-** Basic hash map and call **
+**Basic hash map and call**
 
 ```rs
 {
@@ -335,7 +335,7 @@ This program is quite confusing to some people so let us break it down. SkyLine 
 result: hello world
 ```
 
-** Using hashes properly **
+**Using hashes properly**
 
 Typically you do not want the mess above, so we can declare a hash like this.
 
