@@ -13,6 +13,8 @@ Variables in SkyLine are quite easy, each data type (`String, Float, Boolean, Er
 
 <br>
 
+# Data types #
+
 > ### Strings (Rules & Operators) | Module 0.1 ###
 
 <br>
