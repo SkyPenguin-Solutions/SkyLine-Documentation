@@ -11,7 +11,7 @@ Variables in SkyLine are quite easy, each data type (`String, Float, Boolean, Er
 
 > Note: Keywords such as set, let, cause, allow are all doing the same thing, they all allow you to create and assign base variables into the environment of the language. SkyLine has some basic issues with only using one keyword because the developer firmly believes in fluidity. The mash and mix of keywords while all doing the same thing all allow the people and developers to use a specific style when in further development.
 
-####Strings (Rules & Operators) | Module 0.1####
+#### Strings (Rules & Operators) | Module 0.1 ####
 
 > **Strings**
 
