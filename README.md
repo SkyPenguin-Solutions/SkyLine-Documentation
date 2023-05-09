@@ -667,6 +667,64 @@ STRING.Length()
 //Result: Integer->6 ( because len(STRING)=6 )
 ```
 
+# Libraries and Module system
+
+SkyLine like every other language has a module system and a standard library system. However, there are toms of different features that go along with SkyLine's module system including rule sets. The difference between SkyLine and other language's is that it seperates module calls from library calls. Standard libraries are called using `.` while imports are called with `::`. Below are some basic examples of the systems and how they are shown.
+
+> ### Register (Keys, usage, examples) | Module 0.3 ###
+
+In SkyLine, standard or builtin libraries that are NOT self hosted ( not written using SkyLine ) are "registered" into the environment. This means that instead of importing values and just exporting data from other files, it will register the built in function into the environment. Standard libraries are called with `LibName.Function()`. Below is an example of registering the IO library to check for input and calculate the result.
+
+```res
+register("io")
+
+set answer := io.input("number to multiply by 2> ", "Integer", "n");
+
+(answer * 2)
+```
+
+By registering the library you register everything into the environment. it has come aparent that users do not always want to import specific things, so, to solve for this. Currently in 0.0.5 there is no `LinkOnly` like there is in 0.10.0 ( developers unreleased nightly build ) but we have added a function that allows you to unlink the library from the environment once you are done using it.
+
+```rs
+register("io")
+
+set answer := io.input("number to multiply by 2> ", "Integer", "n");
+
+(answer * 2)
+
+"io".UnlinkRegistry()
+```
+
+The function `UnlinkRegistry` is apart of the `String` data type and will unlink existing standard / builtin libraries. The ability to unlink the information and functions from the library cuts down on overloading the environment with functions you will not ever use again and where you can just call it once. Unlinking also saves a ton of space during further parsing. As you can see this is not importing anything but rather just registering data into the environment rather than starting a whole new parser and shell to parse and export environment hashes which is what an import does.
+
+> ### Import (Keys, usage, examples) | Module 0.3 ###
+
+SkyLine has use for importing files and modules as well, all of which can be called with a local variable. Bellow we have a file called `test.sl` and a file called `main.sl` all are skyline standard files. main.sl will import test.sl
+
+**test.sl**
+
+```
+set PI := 3.14;
+set name := "jef";
+```
+
+**main.sl**
+
+```rs
+
+set Lib := import("test.sl");
+
+Lib::PI
+
+//Result: Float->3.14
+
+LIB::name
+
+//Result: SLC_PARSER_ERROR
+```
+
+You may get the idea of importing but why was name not really imported? SkyLine refuses and ignores any and all variables that are not capitalized. This is to save room for organization and modernization within the language's environment. This also allows the user to pick and choose what they NEED to be exported and then imported into the environment and what they DONT need. 
+
 
 
 
