@@ -747,11 +747,23 @@ SkyLine is a big language and one of the major features is customization. Now de
 
 https://github.com/SkyPenguin-Solutions/SkyLineConfigurationEngine
 
+> ### Articles | SkyLine's write ups ### 
 
+**An untold story | SkyLine's development process**
 
+https://medium.com/@Totally_Not_A_Haxxer/developing-skyline-an-untold-story-3a11ac184a13
 
+**Informative Understanding | A basic walk through SkyLine's concepts**
 
+https://medium.com/@Totally_Not_A_Haxxer/skyline-an-informative-document-d46afa99e91b
 
+**Logo Design | SkyLine's concept and modernization of stealth**
+
+https://bootcamp.uxdesign.cc/skyline-logo-design-and-idea-4bfef04e418e
+
+**Basic Walkthrough | SkyLine's first stages**
+
+https://medium.com/@Totally_Not_A_Haxxer/skyline-a-modern-programming-language-f840c6275644
 
 
 
