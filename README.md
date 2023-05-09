@@ -725,6 +725,28 @@ LIB::name
 
 You may get the idea of importing but why was name not really imported? SkyLine refuses and ignores any and all variables that are not capitalized. This is to save room for organization and modernization within the language's environment. This also allows the user to pick and choose what they NEED to be exported and then imported into the environment and what they DONT need. 
 
+# Sub files 
+
+SkyLine is still in development and because of this its syntax is constantly changing, however, in the meantime you can visit the following URl's to better explore SkyLine as a language.
+
+> ### Main Repo | SkyLine source ###
+
+SkyLine's most recent verison was 0.0.5 and currently there are a TON of bugs to work out, but its a good idea to get into that.
+
+https://github.com/SkyPenguin-Solutions/SkyLine
+
+> ### Demo Repo | SkyLine Demo's ###
+
+This repo contains over 70+ demo source code files that demo the libraries, their functions, SkyLine's functionality, what it can and cant do, and so on from there. These files can help you better understand how SkyLine works and why it exists.
+
+https://github.com/SkyPenguin-Solutions/SkyLine-Demo
+
+> ### Second Repo | SkyLine's Configuration Engine ### 
+
+SkyLine is a big language and one of the major features is customization. Now despite SkyLine also having such a unique build and frame to work with, some things such as customization became to large for the language itself to handle. The birth of SLC solved this issue, otherwise and commonly known as SkyLine Configuration Engine (SLC-E) is an engine that helps with project configuration and setup.
+
+https://github.com/SkyPenguin-Solutions/SkyLineConfigurationEngine
+
 
 
 
